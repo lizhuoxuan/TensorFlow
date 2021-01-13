@@ -30,5 +30,6 @@ layer_outputs = [layer.output for layer in model.layers]
 activation_model = tf.keras.models.Model(inputs=model.input, outputs=layer_outputs)
 pred = activation_model.predict(test_images[0].reshape(1, 28, 28, 1))
 print(pred)
+# [ , ]以逗号分隔，先选择第一维，再选择第二维
 plt.imshow(pred[0][0, :, :, 1])
 plt.show()
